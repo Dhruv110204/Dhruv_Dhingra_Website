@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhruv Dhingra — Portfolio</title>
+  <meta name="description" content="Personal website and portfolio of Dhruv Deepak Dhingra." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-1: #0b1020;   /* deep space */
+      --bg-2: #101a3a;   /* indigo/navy */
+      --c-1: #64d2ff;    /* cool cyan */
+      --c-2: #8a7dff;    /* soft purple */
+      --c-3: #5cf2c0;    /* mint */
+      --c-4: #b0b6ff;    /* periwinkle */
+      --text: #e8f0ff;   /* light text */
+      --muted: #b8c5e6;  /* muted text */
+      --card: rgba(255,255,255,0.06);
+      --stroke: rgba(255,255,255,0.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.04);
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% -10%, #1b2350 0%, transparent 70%),
+                  radial-gradient(1000px 700px at 120% 10%, #16244b 0%, transparent 60%),
+                  linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      overflow-x: hidden;
+    }
+
+    /* === Abstract background art (SVG + animated shapes) === */
+    .art-bg {
+      position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      filter: saturate(110%) contrast(110%);
+    }
+    .art-bg svg { width: 100%; height: 100%; display: block; }
+
+    .blob, .ring, .wire {
+      mix-blend-mode: screen;
+      opacity: .38;
+    }
+
+    .float {
+      animation: float 16s ease-in-out infinite;
+    }
+    .float-slow {
+      animation: float 28s ease-in-out infinite;
+    }
+    .rotate {
+      animation: spin 60s linear infinite;
+      transform-origin: center;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-18px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* === Layout === */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 56px 24px 80px; }
+    header { display: grid; gap: 14px; margin: 56px 0 26px; }
+    header h1 { font-size: clamp(32px, 6vw, 58px); line-height: 1.05; margin: 0; letter-spacing: -0.02em; }
+    header p { margin: 0; color: var(--muted); font-size: clamp(14px, 2.8vw, 18px); }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .badge {
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-3); box-shadow: 0 0 14px var(--c-3); }
+
+    .card {
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .section { margin-top: 40px; }
+    .section h2 { font-size: 20px; letter-spacing: .06em; text-transform: uppercase; color: var(--c-4); margin: 0 0 14px; }
+
+    .about { display: grid; gap: 16px; padding: 22px; }
+    .about p { margin: 0; color: var(--text); line-height: 1.7; }
+
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .project-card { padding: 18px; position: relative; overflow: hidden; }
+    .project-card h3 { margin: 0 0 6px; font-size: 18px; }
+    .project-card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .project-card::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(350px 120px at var(--mx, 60%) var(--my, 40%), rgba(138,125,255,.16), transparent 60%);
+      transition: opacity .25s ease; opacity: 0;
+    }
+    .project-card:hover::after { opacity: 1; }
+
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: 12px; border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      color: var(--text); text-decoration: none; font-weight: 600; letter-spacing: .02em;
+      box-shadow: var(--shadow);
+      transition: transform .12s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    footer { margin-top: 48px; padding-top: 22px; border-top: 1px dashed var(--stroke); color: var(--muted); font-size: 14px; }
+    a { color: var(--c-1); }
+  </style>
+</head>
+<body>
+  <!-- Decorative Abstract Background (SVG lines + blobs) -->
+  <div class="art-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <!-- Soft gradient backdrop -->
+      <defs>
+        <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#243a7c" />
+          <stop offset="100%" stop-color="#161a36" />
+        </linearGradient>
+        <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#64d2ff" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#64d2ff" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glowMint" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#5cf2c0" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#5cf2c0" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#8a7dff" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#8a7dff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <rect width="1200" height="800" fill="url(#grad1)" opacity="0"/>
+
+      <!-- Blobs -->
+      <g class="blob float" transform="translate(180 120)">
+        <circle cx="0" cy="0" r="180" fill="url(#glowPurple)"/>
+      </g>
+      <g class="blob float-slow" transform="translate(980 180)">
+        <circle cx="0" cy="0" r="220" fill="url(#glowCyan)"/>
+      </g>
+      <g class="blob float" transform="translate(780 620)">
+        <circle cx="0" cy="0" r="190" fill="url(#glowMint)"/>
+      </g>
+
+      <!-- Concentric rings -->
+      <g class="ring rotate" transform="translate(260 560)">
+        <circle cx="0" cy="0" r="160" fill="none" stroke="#8a7dff" stroke-opacity="0.18" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="120" fill="none" stroke="#64d2ff" stroke-opacity="0.15" stroke-width="1"/>
+        <circle cx="0" cy="0" r="85"  fill="none" stroke="#5cf2c0" stroke-opacity="0.18" stroke-width="1"/>
+      </g>
+
+      <!-- Curved wires -->
+      <g class="wire" stroke="#b0b6ff" stroke-opacity="0.18" fill="none" stroke-width="1">
+        <path d="M -50 200 C 300 -40, 600 440, 1250 150" />
+        <path d="M -50 260 C 300 20, 600 470, 1250 210" />
+        <path d="M -50 320 C 300 80, 600 500, 1250 270" />
+      </g>
+    </svg>
+  </div>
+
+  <main class="wrap">
+    <header>
+      <h1>Dhruv Dhingra</h1>
+      <p>Operations & Information Management • Managerial Economics</p>
+      <div class="badge-row" role="list">
+        <span class="badge" role="listitem"><span class="dot" aria-hidden="true"></span> University of Massachusetts, Amherst — Isenberg School of Management</span>
+        <span class="badge" role="listitem"><span class="dot" aria-hidden="true" style="background: var(--c-1); box-shadow: 0 0 14px var(--c-1);"></span> Graduation: <strong>May 2026</strong> <!-- ← If this date is off, edit it! --></span>
+      </div>
+      <div class="cta-row">
+        <!-- Add your links below -->
+        <a class="btn" href="#projects" aria-label="Skip to Projects">View Projects</a>
+        <a class="btn" href="mailto:youremail@example.com" aria-label="Contact Dhruv">Contact</a>
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>About</h2>
+      <article class="about card">
+        <p>
+          I’m a senior at UMass Amherst’s Isenberg School of Management, double majoring in
+          Operations & Information Management and Managerial Economics. I’m interested in
+          process improvement, data-driven decision making, business intelligence and alternative data.
+          Recently, I’ve explored analytics for workflow optimization and strategy, and I’m
+          excited about roles where I can combine business intuition with modern tooling to make
+          operations smarter and faster.
+        </p>
+        <!-- 👇 Edit the paragraph above to personalize your intro -->
+      </article>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <!--
+        🔧 Add your projects by duplicating a .project-card.
+        Suggested structure: Title, 1–2 line description, and an optional link.
+      -->
+      <div class="grid">
+        <article class="project-card card" tabindex="0">
+          <h3>Project Title</h3>
+          <p>One-liner about what this does and the impact it had. <a href="#">View repo →</a></p>
+        </article>
+        <article class="project-card card" tabindex="0">
+          <h3>Another Project</h3>
+          <p>Brief description. Include metrics if you have them. <a href="#">Case study →</a></p>
+        </article>
+        <article class="project-card card" tabindex="0">
+          <h3>Third Project</h3>
+          <p>What problem did you solve and how? <a href="#">Live demo →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Dhruv Deepak Dhingra. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Dynamic year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Subtle interactive light for project cards
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width) * 100;
+        const y = ((e.clientY - r.top) / r.height) * 100;
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+      });
+    });
+  </script>
+</body>
+</html>
