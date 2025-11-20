@@ -125,7 +125,7 @@
     footer { margin-top: 48px; padding-top: 22px; border-top: 1px dashed var(--stroke); color: var(--muted); font-size: 14px; }
     a { color: var(--c-1); }
 
-    /* === Resume section styles === */
+    /* === Resume section styles (unused now, safe to keep) === */
     .resume-card {
       padding: 22px 22px 20px;
       display: grid;
@@ -290,13 +290,14 @@
       </div>
       <div class="cta-row">
         <a class="btn" href="#projects" aria-label="Skip to Projects">View Projects</a>
-        <a class="btn" href="#resume" aria-label="Skip to Resume">View Résumé</a>
-        <a class="btn" href="/mnt/data/Dhruv Dhingra SY Resume.pdf" download aria-label="Download Resume PDF">Download Résumé (PDF)</a>
+
+        <!-- ✅ Single working resume download button -->
+        <a class="btn" href="Dhruv%20Dhingra%20SY%20Resume.pdf" download aria-label="Download Resume PDF">
+          Download Résumé (PDF)
+        </a>
+
         <a class="btn" href="mailto:ddhingra@umass.edu" aria-label="Contact Dhruv">Contact</a>
         <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="/mnt/data/Dhruv Dhingra SY Resume.pdf" download>
-         Resume
-       </a>
         <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
       </div>
     </header>
@@ -315,177 +316,7 @@
       </article>
     </section>
 
-    <!-- ===== Resume Section ===== -->
-    <section id="resume" class="section">
-      <h2>Résumé</h2>
-      <article class="resume-card card">
-        <div class="resume-header-line">
-          <span class="resume-name">DHRUV DEEPAK DHINGRA</span>
-          <div class="resume-contact">
-            <span>📍 Amherst, MA</span>
-            <span>📞 +1 (413) 428-2510</span>
-            <span>✉️ <a href="mailto:ddhingra@umass.edu">ddhingra@umass.edu</a></span>
-          </div>
-        </div>
-
-        <div class="resume-grid">
-          <!-- Left column -->
-          <div>
-            <!-- Professional Summary -->
-            <div>
-              <div class="resume-block-title">Professional Summary</div>
-              <p class="resume-summary">
-                Motivated student pursuing a Bachelor of Business Administration in Operations and Information
-                Management and a Bachelor of Science in Managerial Economics. Passionate and punctual, with a
-                strong focus on teamwork, quality, and clear communication. Experienced presenting to technical
-                and non-technical stakeholders and applying analytics to real business problems.
-              </p>
-            </div>
-
-            <!-- Education -->
-            <div>
-              <div class="resume-block-title">Education</div>
-              <div class="resume-item">
-                <div class="resume-item-header">
-                  <div>
-                    <div class="resume-role">University of Massachusetts Amherst</div>
-                    <div class="resume-org">B.S. Managerial Economics & B.B.A. Operations and Information Management</div>
-                  </div>
-                  <div class="resume-date">Expected May 2026</div>
-                </div>
-                <div class="resume-location">Amherst, MA • GPA: 3.6</div>
-                <ul class="resume-list">
-                  <li>Relevant Coursework: Business Applications of Python, Machine Learning in Business, AI in Economics, AI in Business, Quality Management, Business Intelligence and Analytics, Decision Analysis, Managerial Economics, Business Communication.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Certifications -->
-            <div>
-              <div class="resume-block-title">Certifications</div>
-              <ul class="resume-list">
-                <li>Accenture – Data Analytics and Visualization Job Simulation</li>
-                <li>J.P. Morgan – Investment Banking Job Simulation</li>
-                <li>DataCamp – Introduction to Python, Intermediate Python, Data Manipulation with Pandas, Introduction to Data Visualization with Seaborn, Introduction to Statistics in Python</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Right column -->
-          <div>
-            <!-- Experience -->
-            <div>
-              <div class="resume-block-title">Experience</div>
-
-              <div class="resume-item">
-                <div class="resume-item-header">
-                  <div>
-                    <div class="resume-role">Business Operations Intern</div>
-                    <div class="resume-org">TransUnion</div>
-                  </div>
-                  <div class="resume-date">Jun 2025 – Aug 2025</div>
-                </div>
-                <div class="resume-location">Chicago, IL (Hybrid)</div>
-                <ul class="resume-list">
-                  <li>Streamlined enhancement ticket backlog in Salesforce by reviewing, prioritizing, and closing outdated items, achieving a ~30% reduction and improving visibility for multiple teams.</li>
-                  <li>Led user access policy review, auditing 150+ permissions across platforms, documenting current access, and recommending policy updates to improve compliance and reduce excess access.</li>
-                  <li>Collaborated on D&amp;B account matching initiative, cleaning and standardizing firmographic data to improve account mapping accuracy and reduce duplicate accounts in Salesforce.</li>
-                  <li>Coordinated enablement code distribution, tracking usage and expiration to ensure accurate provisioning for customer accounts.</li>
-                </ul>
-              </div>
-
-              <div class="resume-item">
-                <div class="resume-item-header">
-                  <div>
-                    <div class="resume-role">Junior Analyst</div>
-                    <div class="resume-org">Isenberg Insurance Academy</div>
-                  </div>
-                  <div class="resume-date">Sep 2024 – Present</div>
-                </div>
-                <ul class="resume-list">
-                  <li>Building a capstone project focused on applying analytics to insurance and risk management.</li>
-                  <li>Advancing Python skills via DataCamp coursework, with emphasis on data manipulation and visualization.</li>
-                  <li>Networking with professionals from Liberty Mutual, Travelers, Arbella, and The Hanover Group to understand career paths and industry trends.</li>
-                </ul>
-              </div>
-
-              <div class="resume-item">
-                <div class="resume-item-header">
-                  <div>
-                    <div class="resume-role">Waste Reduction Coordinator</div>
-                    <div class="resume-org">Hampshire Dining Commons</div>
-                  </div>
-                  <div class="resume-date">Sep 2024 – Sep 2025</div>
-                </div>
-                <div class="resume-location">Amherst, MA</div>
-                <ul class="resume-list">
-                  <li>Measured daily food waste using Leanpath, producing weekly and monthly reports and audits.</li>
-                  <li>Identified waste trends and recommended interventions to reduce food waste in the dining commons.</li>
-                  <li>Trained staff on accurate waste measurement and logging practices to improve data quality.</li>
-                </ul>
-              </div>
-
-              <div class="resume-item">
-                <div class="resume-item-header">
-                  <div>
-                    <div class="resume-role">Summer Intern</div>
-                    <div class="resume-org">Konsultera Solutions Pvt Ltd</div>
-                  </div>
-                  <div class="resume-date">Jun 2024 – Aug 2024</div>
-                </div>
-                <ul class="resume-list">
-                  <li>Mapped process flows for automating dispute handling for credit report discrepancies.</li>
-                  <li>Completed SWOT analyses of five leading competitors to benchmark market positioning.</li>
-                  <li>Researched potential agentic AI teams (Product Management, Customer Onboarding, Loan Processing &amp; Credit Scoring) for integration into the firm’s in-house AI platform.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Skills -->
-            <div>
-              <div class="resume-block-title">Skills</div>
-              <div class="resume-item">
-                <strong>Tools &amp; Technologies</strong>
-                <div class="pill-list">
-                  <span class="pill">Excel</span>
-                  <span class="pill">PowerPoint</span>
-                  <span class="pill">Word</span>
-                  <span class="pill">Teams</span>
-                  <span class="pill">Access</span>
-                  <span class="pill">Outlook</span>
-                  <span class="pill">SQL</span>
-                  <span class="pill">Python</span>
-                  <span class="pill">R</span>
-                  <span class="pill">VBA</span>
-                  <span class="pill">LaTeX</span>
-                  <span class="pill">Power BI</span>
-                  <span class="pill">Tableau</span>
-                  <span class="pill">Alteryx</span>
-                  <span class="pill">JMP Pro</span>
-                  <span class="pill">SAP Analytics Cloud</span>
-                  <span class="pill">Excel Analytics Solver</span>
-                </div>
-              </div>
-              <div class="resume-item">
-                <strong>Languages</strong>
-                <div class="pill-list">
-                  <span class="pill">English</span>
-                  <span class="pill">Hindi</span>
-                  <span class="pill">Marathi</span>
-                  <span class="pill">Gujarati</span>
-                  <span class="pill">Sindhi</span>
-                  <span class="pill">Spanish</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top: 8px; font-size: 13px; color: var(--muted); display:flex; justify-content: flex-end;">
-          <a href="/mnt/data/Dhruv Dhingra SY Resume.pdf" download>Download full résumé as PDF →</a>
-        </div>
-      </article>
-    </section>
+    <!-- 👇 Resume section REMOVED on purpose -->
 
     <section id="projects" class="section">
       <h2>Projects</h2>
