@@ -227,7 +227,7 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
   <!-- Decorative Abstract Background (SVG lines + blobs) -->
   <div class="art-bg" aria-hidden="true">
     <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
@@ -290,12 +290,8 @@
       </div>
       <div class="cta-row">
         <a class="btn" href="#projects" aria-label="Skip to Projects">View Projects</a>
-
-        <!-- ✅ Single working resume download button -->
-        <a class="btn" href="Dhruv%20Dhingra%20SY%20Resume.pdf" download aria-label="Download Resume PDF">
-          Download Résumé (PDF)
-        </a>
-
+        <!-- Resume download from repo root -->
+        <a class="btn" href="Dhruv%20Dhingra%20SY%20Resume.pdf" download aria-label="Download Resume PDF">Download Résumé (PDF)</a>
         <a class="btn" href="mailto:ddhingra@umass.edu" aria-label="Contact Dhruv">Contact</a>
         <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
@@ -316,15 +312,41 @@
       </article>
     </section>
 
-    <!-- 👇 Resume section REMOVED on purpose -->
+    <!-- Resume section intentionally removed so it's not displayed -->
 
     <section id="projects" class="section">
       <h2>Projects</h2>
       <div class="grid">
+        <!-- First project customized -->
         <article class="project-card card" tabindex="0">
-          <h3>Project Title</h3>
-          <p>One-liner about what this does and the impact it had. <a href="#">View repo →</a></p>
+          <h3>AI's Impact on The Business Intelligence Industry</h3>
+          <p>
+            Research project analyzing how AI is transforming the Business Intelligence sector,
+            including market structure, firm behavior, and impacts on workers and productivity.
+          </p>
+          <div class="cta-row" style="margin-top: 10px; gap: 8px;">
+            <!-- Canva presentation link -->
+            <a
+              class="btn"
+              href="https://www.canva.com/design/DAG5QtDTrWA/hT1MsaCj3hUnrepmExSUFA/edit?utm_content=DAG5QtDTrWA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open Canva presentation for AI's Impact on the Business Intelligence Industry"
+            >
+              View Presentation (Canva)
+            </a>
+            <!-- Project report PDF from uploaded file -->
+            <a
+              class="btn"
+              href="/mnt/data/Project Report Draft.pdf"
+              download
+              aria-label="Download project report PDF for AI's Impact on the Business Intelligence Industry"
+            >
+              Download Report (PDF)
+            </a>
+          </div>
         </article>
+
         <article class="project-card card" tabindex="0">
           <h3>Another Project</h3>
           <p>Brief description. Include metrics if you have them. <a href="#">Case study →</a></p>
@@ -333,6 +355,11 @@
           <h3>Third Project</h3>
           <p>What problem did you solve and how? <a href="#">Live demo →</a></p>
         </article>
+      </div>
+
+      <!-- Back to Home button -->
+      <div style="margin-top: 24px;">
+        <a class="btn" href="#top">Back to Home</a>
       </div>
     </section>
 
@@ -359,5 +386,6 @@
   </script>
 </body>
 </html>
+
 
 
